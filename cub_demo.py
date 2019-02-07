@@ -27,8 +27,9 @@ import scipy.misc
 from sklearn import preprocessing
 import CUB
 
-keras.backend.set_image_data_format('channels_first')
+from keras import backend as K
 
+K.set_image_data_format('channels_first')
 # args
 net = sys.argv[1]
 data_folder = sys.argv[2]
