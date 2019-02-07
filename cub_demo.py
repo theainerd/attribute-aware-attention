@@ -80,7 +80,7 @@ inputs = Input(shape=(3, img_rows, img_cols))
 out_list = []
 
 # shared CNN
-model_raw = eval(net)(input_tensor=inputs, include_top=False, weights='imagenet')
+model_raw = eval(net)(input_tensor=inputs,input_shape=(3,img_rows,img_cols), include_top=False, weights='imagenet')
 share_fea_map = model_raw.get_layer(shared_layer_name).output
 print(share_fea_map.shape)
 share_fea_map = Reshape((final_dim, L), name='reshape_layer')(share_fea_map)        
