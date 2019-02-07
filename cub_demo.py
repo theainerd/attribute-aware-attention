@@ -27,9 +27,9 @@ import scipy.misc
 from sklearn import preprocessing
 import CUB
 
-from keras import backend as K
+# from keras import backend as K
 
-K.set_image_data_format('channels_first')
+# K.set_image_data_format('channels_first')
 
 # args
 net = sys.argv[1]
