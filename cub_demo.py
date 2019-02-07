@@ -1,5 +1,11 @@
 ''' A3M for fine-grained recognition
 '''
+from __future__ import print_function
+import sys
+sys.path.append("..")
+sys.setrecursionlimit(10000)
+
+
 from keras import backend as K
 import os
 
@@ -12,10 +18,8 @@ def set_keras_backend(backend):
 
 set_keras_backend("theano")
 
-from __future__ import print_function
-import sys
-sys.path.append("..")
-sys.setrecursionlimit(10000)
+
+
 import numpy as np
 np.random.seed(2208)  # for reproducibility
 
