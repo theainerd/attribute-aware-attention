@@ -30,6 +30,7 @@ import CUB
 from keras import backend as K
 
 K.set_image_data_format('channels_first')
+
 # args
 net = sys.argv[1]
 data_folder = sys.argv[2]
@@ -81,6 +82,7 @@ out_list = []
 # shared CNN
 model_raw = eval(net)(input_tensor=inputs, include_top=False, weights='imagenet')
 share_fea_map = model_raw.get_layer(shared_layer_name).output
+print(share_fea_map.shape)
 share_fea_map = Reshape((final_dim, L), name='reshape_layer')(share_fea_map)        
 share_fea_map = Permute((2, 1))(share_fea_map) 
 
