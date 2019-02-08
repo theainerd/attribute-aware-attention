@@ -5,16 +5,17 @@ import sys
 sys.path.append("..")
 sys.setrecursionlimit(10000)
 
-from keras import backend as K
+
 import os
 os.environ['KERAS_BACKEND'] = 'theano'
 
-set_image_dim_ordering('th')
+
 
 
 import numpy as np
 np.random.seed(2208)  # for reproducibility
 
+from keras import backend as K
 import time
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers import Input, Dense, RepeatVector, Permute, merge
@@ -34,6 +35,7 @@ import scipy.misc
 from sklearn import preprocessing
 import CUB
 
+K.set_image_dim_ordering('th')
 # args
 net = sys.argv[1]
 data_folder = sys.argv[2]
