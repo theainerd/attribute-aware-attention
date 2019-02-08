@@ -1,2 +1,2 @@
 keras == 1.2.1
-pygpu
+pygpu==0.7.6

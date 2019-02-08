@@ -5,8 +5,11 @@ import sys
 sys.path.append("..")
 sys.setrecursionlimit(10000)
 
+from keras import backend as K
 import os
 os.environ['KERAS_BACKEND'] = 'theano'
+
+set_image_dim_ordering('th')
 
 
 import numpy as np
