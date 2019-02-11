@@ -9,7 +9,7 @@ f1 = open(attribute_name_file, 'rb')
 start_idxs = []
 last_attr = ''
 for line in f1.readlines():
-	strs = re.split(' |::', line)
+	strs = re.split(' ', line)
 	if(strs[1]!=last_attr):
 		start_idxs.append(int(strs[0]))
 	last_attr = strs[1]
