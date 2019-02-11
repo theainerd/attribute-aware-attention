@@ -13,6 +13,7 @@ for line in f1.readlines():
 	line = line.decode("utf-8")
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
+	strs = re.split(' ', line)
 	if(strs[0]!=last_attr):
 		start_idxs.append(int(strs[1]))
 	last_attr = strs[0]
