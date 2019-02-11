@@ -54,6 +54,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
         i+=1
     except:
         break
+    
     split_rf.close()
     # bb
     bb_rf = open(bb_file,'r')
