@@ -129,9 +129,9 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 
 bb_file = data_folder+'/Anno/list_bbox.txt'
 bb_rf = open(bb_file,'r')
-    bb_list = []
-    for line in bb_rf.readlines():
-        strs = line.strip().split(' ')
-        bb_list.append((float(strs[1]),float(strs[2]),float(strs[1])+float(strs[3])
+bb_list = []
+for line in bb_rf.readlines():
+    strs = line.strip().split(' ')
+    bb_list.append((float(strs[1]),float(strs[2]),float(strs[1])+float(strs[3])
             ,float(strs[2])+float(strs[4])))
-    bb_rf.close()
+bb_rf.close()
