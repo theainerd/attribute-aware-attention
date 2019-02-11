@@ -22,7 +22,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     X_test = []
     y_train = []
     y_test = []
-    #data_folder = '/home/hankai/data/CUB_200_2011'
+    data_folder = '/home/ubuntu/attribute-aware-attention/data'
     images_file = data_folder+'/images.txt'
     label_file = data_folder+'/Anno/list_category_img.txt'
     attributes_file = data_folder+'/attributes/image_attribute_labels.txt'
