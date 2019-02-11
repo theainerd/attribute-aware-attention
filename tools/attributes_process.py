@@ -15,9 +15,10 @@ for line in f1.readlines():
             line = line.replace("   ", "  ")
             line = line.replace("  "," ")
 	strs = re.split(' ', line)
-	print(i)
 	if(strs[1]!=last_attr):
 		start_idxs.append(i)
+	if(strs[1]!=last_attr):
+		print(i)
 	last_attr = strs[1]
 	i+= 1
 
