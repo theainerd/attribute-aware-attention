@@ -33,20 +33,27 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     attribute_name_file = data_folder+'/attributes.txt'
     processed_attribute_file = data_folder+'/processed_attributes.txt'
     
+
     # train test split
     split_rf = open(split_file,'r')
     train_test_list = []
     train_idx = []
     test_idx = []
     i=0
+
     for line in split_rf.readlines():
-        strs = line.strip().split(' ')
+        while line.replace("   ", "  ") != line:
+            line = line.replace("   ", "  ")
+    try:                  
+        strs = line.strip().split('  ')
         train_test_list.append(strs[1])
         if(strs[1]=='train'):
             train_idx.append(i)
         else:
             test_idx.append(i)
         i+=1
+    except:
+        break
     split_rf.close()
     # bb
     bb_rf = open(bb_file,'r')
@@ -119,26 +126,3 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
-data_folder = '/home/ubuntu/attribute-aware-attention/data'
-split_file = data_folder+'/Eval/list_eval_partition.txt'
-# train test split
-split_rf = open(split_file,'r')
-train_test_list = []
-train_idx = []
-test_idx = []
-i=0
-
-for line in split_rf.readlines():
-    while line.replace("   ", "  ") != line:
-            line = line.replace("   ", "  ")
-    try:                  
-        strs = line.strip().split('  ')
-        train_test_list.append(strs[1])
-        if(strs[1]=='train'):
-            train_idx.append(i)
-        else:
-            test_idx.append(i)
-        i+=1
-    except:
-        break
-split_rf.close()
