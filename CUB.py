@@ -127,8 +127,11 @@ train_test_list = []
 train_idx = []
 test_idx = []
 i=0
+
 for line in split_rf.readlines():
-    strs = line.strip().split('      ')
+    while line.replace("   ", "  ") != line:
+            line = line.replace("   ", "  ")          
+    strs = line.strip().split('  ')
     print(strs)
     print(len(strs))
     # train_test_list.append(strs[36])
