@@ -128,12 +128,13 @@ test_idx = []
 i=0
 for line in split_rf.readlines():
     strs = line.strip().split(' ')
-    train_test_list.append(strs[1])
-    if(strs[1]=='train'):
-        train_idx.append(i)
-    else:
-        test_idx.append(i)
-    i+=1
+    print(strs)
+    # train_test_list.append(strs[1])
+    # if(strs[1]=='train'):
+    #     train_idx.append(i)
+    # else:
+    #     test_idx.append(i)
+    # i+=1
 split_rf.close()
 
 print(train_test_list)
