@@ -3,17 +3,20 @@
 import re
 import numpy as np
 
+
 # get attribute cluster idx
 attribute_name_file = '../data/Anno/list_attr_cloth.txt'
 f1 = open(attribute_name_file, 'rb')
 start_idxs = []
 last_attr = ''
 i = 0
+
 for line in f1.readlines():
 	line = line.decode("utf-8")
 	line = line.strip().replace('\n', '')
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
+	
 	strs = re.split('  ', line)
 	print(strs)
 	if(strs[0]!=last_attr):
