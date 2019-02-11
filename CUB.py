@@ -145,5 +145,3 @@ for line in bb_rf.readlines():
         bb_list.append((float(strs[1]),float(strs[2]),float(strs[3]),float(strs[4])))     
 
 bb_rf.close()
-
-print(bb_list)
