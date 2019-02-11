@@ -17,7 +17,7 @@ for line in f1.readlines():
 	strs = re.split(' ', line)
 	if(strs[1]!=last_attr):
 		start_idxs.append(i)
-	if(strs[1]!=last_attr):
+	if(strs[1]==last_attr):
 		print(i)
 	last_attr = strs[1]
 	i+= 1
