@@ -21,7 +21,7 @@ for line in f1.readlines():
 	
 	i+= 1
 
-start_idxs.append(i)
+start_idxs.append(i+1)
 print(start_idxs)
 a = np.array(start_idxs)
 nums = a[1:]-a[:-1]+1
