@@ -74,6 +74,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 
     bb_rf.close()
     # images
+    
     i = 0
     images_rf = open(images_file,'r')
     for line in images_rf.readlines():
@@ -91,6 +92,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
         if(i%1000==0):
             print(i,' images load.')
     images_rf.close()
+    
     # label
     label_rf = open(label_file,'r')
     for line in label_rf.readlines():
@@ -137,4 +139,24 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 
 ######## Delete this part ########
 data_folder = '/home/ubuntu/attribute-aware-attention/data'
-bb_file = data_folder+'/Anno/list_bbox.txt'
+images_file = data_folder+'/Anno/list_bbox.txt'
+
+i = 0
+images_rf = open(images_file,'r')
+for line in images_rf.readlines():
+    strs = line.strip().split(' ')
+    img = image.load_img(data_folder+'/img/'+strs[1])
+    if(bounding_box):
+        img = img.crop(bb_list[int(strs[0])-1])
+    img = img.resize(target_size)
+    x = image.img_to_array(img)
+    if(train_test_list[int(strs[0])-1]=='train'):
+        X_train.append(x)
+    else:
+        X_test.append(x)
+    i += 1
+    if(i%1000==0):
+        print(i,' images load.')
+
+images_rf.close()
+
