@@ -15,12 +15,13 @@ for line in f1.readlines():
             line = line.replace("   ", "  ")
             line = line.replace("  "," ")
 	strs = re.split(' ', line)
-	print(strs)
+	print(i)
 	if(strs[1]!=last_attr):
 		start_idxs.append(i)
 	last_attr = strs[1]
 	i+= 1
-start_idxs.append(i+1)
+
+start_idxs.append(i)
 print(start_idxs)
 a = np.array(start_idxs)
 nums = a[1:]-a[:-1]+1
