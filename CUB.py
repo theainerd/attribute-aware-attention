@@ -141,9 +141,8 @@ for line in bb_rf.readlines():
         strs = line.strip().split(' ')
         bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
     except:
-        if len(strs) == 5:
-            print(strs)
-        
+        strs = line.strip().split(' ')
+        bb_list.append((float(strs[1]),float(strs[2]),float(strs[3]),float(strs[4])))     
 
 bb_rf.close()
 
