@@ -148,7 +148,7 @@ for line in label_rf.readlines():
     while line.replace("   ", "  ") != line:
             line = line.replace("   ", "  ")
     strs = line.strip().split('  ')
-    print(strs)
+    print(strs[1])
     # if(train_test_list[i]=='train'):
     #     y_train.append(int(strs[1])-1)
     # else:
