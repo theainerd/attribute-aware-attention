@@ -1,8 +1,7 @@
 attribute_name_file = '../data/Anno/list_attr_cloth.txt'
 f = open(attribute_name_file, 'rb')
-f1 = open('list_attr_cloth.txt', 'w')
-i = 0
-for line in f.readlines():
-	if i<10000:
-		f1.write(line)
-		i = i+1
+f1 = open('list_attr_cloth_new.txt', 'w')
+with open("in.txt") as f:
+    lines = f.readlines()
+    with open("list_attr_cloth_new.txt", "w") as f1:
+        f1.writelines(lines)
