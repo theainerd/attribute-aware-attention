@@ -140,51 +140,8 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
-
 data_folder = '/home/ubuntu/attribute-aware-attention/data'
-bb_file = data_folder+'/Anno/list_bbox.txt'
-
-bb_rf = open(bb_file,'r')
-bb_list = []
-for line in bb_rf.readlines():
-    if line == "":
-        pass
-    while line.replace("   ", "  ") != line:
-        line = line.replace("  ", " ")
-
-    try:
-        strs = line.strip().split(' ')
-        bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
-    except:
-        strs = line.strip().split(' ')
-        bb_list.append((float(strs[1]),float(strs[2]),float(strs[3]),float(strs[4])))     
-
-bb_rf.close()
-
-bounding_box=True
-data_folder = '/home/ubuntu/attribute-aware-attention/data/'
-images_file = data_folder+'/Anno/list_bbox.txt'
-
-target_size = 224,224
-i = 0
-images_rf = open(images_file,'r')
-for line in images_rf.readlines():
-    strs = line.strip().split(' ')
-    img = image.load_img(data_folder+ strs[0])
-    if(bounding_box):
-        img = img.crop(bb_list[i])
-    img = img.resize(target_size)
-    x = image.img_to_array(img)
-    if(train_test_list[i]=='train'):
-        X_train.append(x)
-    else:
-        X_test.append(x)
-    i += 1
-    if(i%1000==0):
-        print(i,' images load.')
-
-images_rf.close()
-
+label_file = data_folder+'/Anno/list_category_img.txt'
 i = 0
 label_rf = open(label_file,'r')
 for line in label_rf.readlines():
