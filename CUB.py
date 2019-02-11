@@ -118,7 +118,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
-
+data_folder = '/home/ubuntu/attribute-aware-attention/data'
 split_file = data_folder+'/Eval/list_eval_partition.txt'
 # train test split
 split_rf = open(split_file,'r')
