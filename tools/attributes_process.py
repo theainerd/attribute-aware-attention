@@ -17,9 +17,9 @@ for line in f1.readlines():
 	strs = re.split(' ', line)
 	print(strs)
 	if(strs[1]!=last_attr):
-		start_idxs.append(int(strs[0]))
+		start_idxs.append(i)
 	last_attr = strs[1]
-start_idxs.append(int(strs[0])+1)
+start_idxs.append(i+1)
 print(start_idxs)
 a = np.array(start_idxs)
 nums = a[1:]-a[:-1]+1
