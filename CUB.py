@@ -174,10 +174,10 @@ for line in images_rf.readlines():
         img = img.crop(bb_list[i])
     img = img.resize(target_size)
     x = image.img_to_array(img)
-    if(train_test_list[i]=='train'):
-        X_train.append(x)
-    else:
-        X_test.append(x)
+    # if(train_test_list[i]=='train'):
+    #     X_train.append(x)
+    # else:
+    #     X_test.append(x)
     i += 1
     if(i%1000==0):
         print(i,' images load.')
