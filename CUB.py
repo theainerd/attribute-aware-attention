@@ -138,7 +138,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
-data_folder = '/home/ubuntu/attribute-aware-attention/data'
+data_folder = '/home/ubuntu/attribute-aware-attention/data/'
 images_file = data_folder+'/Anno/list_bbox.txt'
 
 i = 0
