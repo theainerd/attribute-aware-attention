@@ -132,7 +132,7 @@ bb_file = data_folder+'/Anno/list_bbox.txt'
 bb_rf = open(bb_file,'r')
 bb_list = []
 for line in bb_rf.readlines():
-    if line = "":
+    if line == "":
         pass
     while line.replace("   ", "  ") != line:
         line = line.replace("  ", " ")
