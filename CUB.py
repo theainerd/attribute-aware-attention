@@ -163,6 +163,7 @@ bounding_box=True
 data_folder = '/home/ubuntu/attribute-aware-attention/data/'
 images_file = data_folder+'/Anno/list_bbox.txt'
 
+target_size = 224
 i = 0
 images_rf = open(images_file,'r')
 for line in images_rf.readlines():
