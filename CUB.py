@@ -139,6 +139,23 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 
 ######## Delete this part ########
 
+bb_rf = open(bb_file,'r')
+bb_list = []
+for line in bb_rf.readlines():
+    if line == "":
+        pass
+    while line.replace("   ", "  ") != line:
+        line = line.replace("  ", " ")
+
+    try:
+        strs = line.strip().split(' ')
+        bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
+    except:
+        strs = line.strip().split(' ')
+        bb_list.append((float(strs[1]),float(strs[2]),float(strs[3]),float(strs[4])))     
+
+bb_rf.close()
+
 bounding_box=True
 data_folder = '/home/ubuntu/attribute-aware-attention/data/'
 images_file = data_folder+'/Anno/list_bbox.txt'
