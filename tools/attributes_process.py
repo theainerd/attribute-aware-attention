@@ -18,8 +18,8 @@ for line in f1.readlines():
 	start_idxs.append(i)
 	i+= 1
 
-# start_idxs.append(i)
-# print(start_idxs)
+start_idxs.append(i)
+print(start_idxs)
 # a = np.array(start_idxs)
 # nums = a[1:]-a[:-1]+1
 # print(np.sum(nums))
