@@ -19,6 +19,7 @@ for line in f1.readlines():
 	if(strs[1]!=last_attr):
 		start_idxs.append(i)
 	last_attr = strs[1]
+	i+= 1
 start_idxs.append(i+1)
 print(start_idxs)
 a = np.array(start_idxs)
