@@ -144,4 +144,4 @@ for line in split_rf.readlines():
         break
 split_rf.close()
 
-print(train_test_list)[:10]
+print(train_test_list[:10])
