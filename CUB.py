@@ -16,6 +16,7 @@ from keras.applications.imagenet_utils import decode_predictions, preprocess_inp
 import scipy.io as sio
 import os
 import time
+import regex
 
 def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     X_train = []
@@ -127,14 +128,14 @@ train_idx = []
 test_idx = []
 i=0
 for line in split_rf.readlines():
-    strs = line.strip().split(' ')
+    strs = line.strip().split(r'\s*')
     print(len(strs))
-    train_test_list.append(strs[36])
-    if(strs[36]=='train'):
-        train_idx.append(i)
-    else:
-        test_idx.append(i)
-    i+=1
+    # train_test_list.append(strs[36])
+    # if(strs[36]=='train'):
+    #     train_idx.append(i)
+    # else:
+    #     test_idx.append(i)
+    # i+=1
 split_rf.close()
 
 print(train_test_list)[:10]
