@@ -139,11 +139,11 @@ for line in bb_rf.readlines():
 
     try:
         strs = line.strip().split(' ')
+        bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
+    except:
         if len(strs) == 5:
             print(strs)
-    #   bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
-    except:
-        print(strs)
+        
 
 bb_rf.close()
 
