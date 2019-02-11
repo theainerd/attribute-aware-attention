@@ -96,13 +96,17 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 
     
     # label
+    i = 0
     label_rf = open(label_file,'r')
     for line in label_rf.readlines():
-        strs = line.strip().split(' ')
-        if(train_test_list[int(strs[0])-1]=='train'):
-            y_train.append(int(strs[1])-1)
+        while line.replace("   ", "  ") != line:
+            line = line.replace("   ", "  ")
+        strs = line.strip().split('  ')
+        if(train_test_list[i]=='train'):
+            y_train.append(str[1])
         else:
-            y_test.append(int(strs[1])-1)
+            y_test.append(str[1])
+        i+= 1
     label_rf.close()
        
     # attributes
@@ -149,9 +153,9 @@ for line in label_rf.readlines():
             line = line.replace("   ", "  ")
     strs = line.strip().split('  ')
     print(strs[1])
-    # if(train_test_list[i]=='train'):
-    #     y_train.append(int(strs[1])-1)
-    # else:
-    #     y_test.append(int(strs[1])-1)
+    if(train_test_list[i]=='train'):
+        y_train.append(str[1])
+    else:
+        y_test.append(str[1])
     i+= 1
 label_rf.close()
