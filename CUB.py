@@ -145,7 +145,7 @@ i = 0
 images_rf = open(images_file,'r')
 for line in images_rf.readlines():
     strs = line.strip().split(' ')
-    img = image.load_img(data_folder+ strs[1])
+    img = image.load_img(data_folder+ strs[0])
     if(bounding_box):
         img = img.crop(bb_list[int(strs[0])-1])
     img = img.resize(target_size)
