@@ -135,3 +135,5 @@ for line in split_rf.readlines():
         test_idx.append(i)
     i+=1
 split_rf.close()
+
+print(train_test_list)
