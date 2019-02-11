@@ -136,6 +136,5 @@ for line in bb_rf.readlines():
         line = line.replace("   ", " ")
     strs = line.strip().split(' ')
     print(strs)
-    # bb_list.append((float(strs[1]),float(strs[2]),float(strs[1])+float(strs[3])
-    #         ,float(strs[2])+float(strs[4])))
+    bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
 bb_rf.close()
