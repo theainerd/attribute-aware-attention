@@ -24,13 +24,14 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     y_test = []
     #data_folder = '/home/hankai/data/CUB_200_2011'
     images_file = data_folder+'/images.txt'
-    label_file = data_folder+'/image_class_labels.txt'
+    label_file = data_folder+'/Anno/list_category_img.txt'
     attributes_file = data_folder+'/attributes/image_attribute_labels.txt'
     class_attributes_file = data_folder+'/attributes/class_attribute_labels_continuous.txt'
-    split_file = data_folder+'/train_test_split.txt'
-    bb_file = data_folder+'/bounding_boxes.txt'
+    split_file = data_folder+'/Eval/list_eval_partition.txt'
+    bb_file = data_folder+'/Anno/list_bbox.txt'
     attribute_name_file = data_folder+'/attributes.txt'
     processed_attribute_file = data_folder+'/processed_attributes.txt'
+    
     # train test split
     split_rf = open(split_file,'r')
     train_test_list = []
@@ -40,7 +41,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     for line in split_rf.readlines():
         strs = line.strip().split(' ')
         train_test_list.append(strs[1])
-        if(strs[1]=='1'):
+        if(strs[1]=='train'):
             train_idx.append(i)
         else:
             test_idx.append(i)
@@ -59,7 +60,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     images_rf = open(images_file,'r')
     for line in images_rf.readlines():
         strs = line.strip().split(' ')
-        img = image.load_img(data_folder+'/images/'+strs[1])
+        img = image.load_img(data_folder+'/img/'+strs[1])
         if(bounding_box):
             img = img.crop(bb_list[int(strs[0])-1])
         img = img.resize(target_size)
@@ -76,11 +77,12 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     label_rf = open(label_file,'r')
     for line in label_rf.readlines():
         strs = line.strip().split(' ')
-        if(train_test_list[int(strs[0])-1]=='1'):
+        if(train_test_list[int(strs[0])-1]=='train'):
             y_train.append(int(strs[1])-1)
         else:
             y_test.append(int(strs[1])-1)
-    label_rf.close()   
+    label_rf.close()
+       
     # attributes
     A_all = np.genfromtxt(processed_attribute_file, dtype=int, delimiter=' ')
     A_train = A_all[train_idx]
@@ -112,8 +114,24 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     return (X_train,y_train), (X_test,y_test), (A_train,A_test,C_A)
 
 
-if __name__ == '__main__':
-    (X_train,y_train), (X_test,y_test) = load_data()
+# if __name__ == '__main__':
+#     (X_train,y_train), (X_test,y_test) = load_data()
 
+######## Delete this part ########
 
-
+split_file = data_folder+'/Eval/list_eval_partition.txt'
+# train test split
+split_rf = open(split_file,'r')
+train_test_list = []
+train_idx = []
+test_idx = []
+i=0
+for line in split_rf.readlines():
+    strs = line.strip().split(' ')
+    train_test_list.append(strs[1])
+    if(strs[1]=='train'):
+        train_idx.append(i)
+    else:
+        test_idx.append(i)
+    i+=1
+split_rf.close()
