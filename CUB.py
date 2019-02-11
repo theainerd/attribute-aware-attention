@@ -132,9 +132,9 @@ bb_file = data_folder+'/Anno/list_bbox.txt'
 bb_rf = open(bb_file,'r')
 bb_list = []
 for line in bb_rf.readlines():
-    while line.replace("   ", "  ") != line:
+    while line.replace("   ", " ") != line:
         line = line.replace("   ", " ")
     strs = line.strip().split(' ')
-    print(strs)
-    bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
+    print(len(strs))
+    # bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
 bb_rf.close()
