@@ -135,7 +135,7 @@ for line in bb_rf.readlines():
     while line.replace("   ", " ") != line:
         line = line.replace("   ", " ")
         line = line.replace("  ", " ")
-    strs = line.strip().split(' ')
+    strs = line.strip().split('')
     print(len(strs))
     print(strs)
     # bb_list.append((float(strs[2]),float(strs[3]),float(strs[4]),float(strs[5])))
