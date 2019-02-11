@@ -169,7 +169,6 @@ images_rf = open(images_file,'r')
 for line in images_rf.readlines():
     strs = line.strip().split(' ')
     img = image.load_img(data_folder+ strs[0])
-    print(bb_list[int(i)])
     if(bounding_box):
         img = img.crop(bb_list[i])
     img = img.resize(target_size)
