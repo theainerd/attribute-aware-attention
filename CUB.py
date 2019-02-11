@@ -144,18 +144,3 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
-data_folder = '/home/ubuntu/attribute-aware-attention/data'
-label_file = data_folder+'/Anno/list_category_img.txt'
-i = 0
-label_rf = open(label_file,'r')
-for line in label_rf.readlines():
-    while line.replace("   ", "  ") != line:
-            line = line.replace("   ", "  ")
-    strs = line.strip().split('  ')
-    print(strs[1])
-    if(train_test_list[i]=='train'):
-        y_train.append(str[1])
-    else:
-        y_test.append(str[1])
-    i+= 1
-label_rf.close()

@@ -55,7 +55,7 @@ region_equal = False
 
 # dataset config
 dataset = 'CUB'
-nb_classes = 200
+nb_classes = 50
 nb_attributes = [10, 16, 16, 16, 5, 16, 7, 16, 12, 16, 16, 15, 4, 16, 16, 16, 16, 6, 6, 15, 5, 5, 5, 16, 16, 16, 16, 5]
 img_rows, img_cols = 448, 448
 L = 14*14
