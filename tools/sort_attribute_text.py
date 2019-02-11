@@ -1,7 +1,8 @@
-lines = open('../data/Anno/list_attr_cloth.txt', 'r').readlines()
-output = open("../data/Anno/list_attr_cloth.txt", 'w')
-
-for line in sorted(lines, key=lambda line: line.split()[1]):
-	print(line)
-
-
+attribute_name_file = '../data/Anno/list_attr_cloth.txt'
+f = open(attribute_name_file, 'rb')
+f1 = open('list_attr_cloth.txt', 'a')
+i = 0
+for line in f.readlines():
+	if i<10000:
+		f1.write(line)
+		i = i+1
