@@ -114,7 +114,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     A_train = A_all[train_idx]
     A_test = A_all[test_idx]
     # class attributes
-    C_A = np.zeros((200,312))
+    C_A = np.zeros((50,1000))
     class_attr_rf = open(class_attributes_file,'r')
     i = 0
     for line in class_attr_rf.readlines():
