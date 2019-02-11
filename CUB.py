@@ -133,7 +133,6 @@ for line in split_rf.readlines():
             line = line.replace("   ", "  ")
     try:                  
         strs = line.strip().split('  ')
-        print(len(strs))
         train_test_list.append(strs[1])
         if(strs[1]=='train'):
             train_idx.append(i)
@@ -143,5 +142,3 @@ for line in split_rf.readlines():
     except:
         break
 split_rf.close()
-
-print(train_test_list[:10])
