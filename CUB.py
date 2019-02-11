@@ -53,7 +53,7 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
             test_idx.append(i)
         i+=1
     except:
-        break
+        pass
     
     split_rf.close()
     # bb
