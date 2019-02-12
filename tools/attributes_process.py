@@ -29,7 +29,7 @@ last_attr = ''
 
 # get attribute cluster idx
 attribute_name_file = '../data/Anno/list_attr_cloth_new_sorted.txt'
-f1 = open(attribute_name_file, 'rb')
+f1 = open(attribute_name_file, 'r')
 start_idxs = []
 last_attr = ''
 for line in f1.readlines():
