@@ -89,7 +89,7 @@ bow                          4
 bow-back                     4
 bow-front                    4
 box                          3
-box pleat                    3
+boxpleat                    3
 box-pleated                  3
 boxy                         3
 boxycrop                    3
@@ -153,7 +153,7 @@ chiffonsurplice             4
 chiffon-paneled              3
 chino                        2
 chunky                       2
-chunky knit                  2
+chunkyknit                  2
 cinched                      4
 circle                       1
 cities                       5
