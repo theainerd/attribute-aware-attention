@@ -16,11 +16,16 @@ for line in f1.readlines():
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
 	strs = re.split('  ', line)
-	print(strs)
-	if(strs[0]!=last_attr):
-		start_idxs.append(int(strs[1]))
-	last_attr = strs[0]
-	
+	if(strs[1]=='1'):
+		start_idxs.append(int(strs[0]))
+	if(strs[1]=='2'):
+		start_idxs.append(int(strs[0]))
+	if(strs[1]=='3'):
+		start_idxs.append(int(strs[0]))
+	if(strs[1]=='4'):
+		start_idxs.append(int(strs[0]))
+	if(strs[1]=='5'):
+		start_idxs.append(int(strs[0]))
 	i+= 1
 
 start_idxs.append(i+1)
