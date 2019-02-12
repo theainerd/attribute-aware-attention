@@ -31,8 +31,16 @@ print(i,j,k,l,m)
 nums = [i,j,k,l,m]
 print(nums)
 
+nb_attr = len(nums)
+A_all = np.zeros((289222,nb_attr))
+image_attribute_file = 'attributes/list_attribute_image.txt'
+f2 = open(image_attribute_file,'rb')
+for line in f2.readlines():
+	line = line.decode("utf-8")
+	print(line)
+
 # # transform binary attribute to clustered attribute
-# nb_attr = len(start_idxs)-1
+# nb_attr = len(nums)
 # A_all = np.zeros((289222,nb_attr))
 # image_attribute_file = 'attributes/list_attribute_image.txt'
 # f2 = open(image_attribute_file,'rb')
