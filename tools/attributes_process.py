@@ -41,11 +41,11 @@ for line in f2.readlines():
 		line = line.replace('   ', ' ')
 		line = line.replace('  ', ' ')
 	strs = line.strip().split(' ')
+	attributes_list = []
 	for i, j in enumerate(strs):
 		if j == '1':
-			print(i,end=' ')
-			print("loop one")
-	print("loop two")		
+			attributes_list.append(i)
+	print(attributes_list)	
 
 
 # # transform binary attribute to clustered attribute
