@@ -40,7 +40,9 @@ for line in f2.readlines():
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', ' ')
 		line = line.replace('  ', ' ')
-	print(line)
+	strs = line.strip().split(' ')
+	print(strs)
+	
 
 # # transform binary attribute to clustered attribute
 # nb_attr = len(nums)
