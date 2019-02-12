@@ -33,7 +33,7 @@ print(nums)
 
 nb_attr = len(nums)
 A_all = np.zeros((289222,nb_attr))
-image_attribute_file = 'attributes/list_attr_img.txt'
+image_attribute_file = '../data/list_attr_img.txt'
 f2 = open(image_attribute_file,'rb')
 for line in f2.readlines():
 	line = line.decode("utf-8")
