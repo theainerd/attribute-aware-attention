@@ -43,7 +43,7 @@ for line in f2.readlines():
 	strs = line.strip().split(' ')
 	for i, j in enumerate(strs):
 		if j == '1':
-			print(i,)
+			print(i,end=' ')
 			print("loop one")
 	print("loop two")		
 
