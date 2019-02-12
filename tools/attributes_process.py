@@ -15,9 +15,7 @@ for line in f1.readlines():
 	line = line.strip().replace('\n', '')
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
-	
 	strs = re.split('  ', line)
-	print(strs)
 	if(strs[0]!=last_attr):
 		start_idxs.append(int(strs[1]))
 	last_attr = strs[0]
@@ -26,10 +24,10 @@ for line in f1.readlines():
 
 start_idxs.append(i+1)
 print(start_idxs)
-a = np.array(start_idxs)
-nums = a[1:]-a[:-1]+1
-print(np.sum(nums))
-print(nums.tolist())
+# a = np.array(start_idxs)
+# nums = a[1:]-a[:-1]+1
+# print(np.sum(nums))
+# print(nums.tolist())
 
 # # transform binary attribute to clustered attribute
 # nb_attr = len(start_idxs)-1
