@@ -37,6 +37,8 @@ image_attribute_file = '../data/Anno/list_attr_img.txt'
 f2 = open(image_attribute_file,'rb')
 for line in f2.readlines():
 	line = line.decode("utf-8")
+	while line.replace('   ','  ') != line:
+		line = line.replace('   ', ' ')
 	print(line)
 
 # # transform binary attribute to clustered attribute
