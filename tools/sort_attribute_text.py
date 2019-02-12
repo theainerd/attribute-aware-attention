@@ -13,6 +13,7 @@ for line in f1.readlines():
 		line = line.replace('   ', ' ')
 		line = line.replace('  ', ' ')
 		line = line.replace('  ', ' ')
+	print(line)
 	line = str.encode(line)	
 	f.write(line)
 	i = i+1
