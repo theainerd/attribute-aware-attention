@@ -41,8 +41,8 @@ for line in f2.readlines():
 		line = line.replace('   ', ' ')
 		line = line.replace('  ', ' ')
 	strs = line.strip().split(' ')
-	for i, j in enumerate(['foo', 'bar', 'baz']):
-		if j == 'bar':
+	for i, j in enumerate(strs):
+		if j == '1':
 			print(i) 
 
 # # transform binary attribute to clustered attribute
