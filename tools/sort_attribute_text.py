@@ -15,6 +15,7 @@ for line in f1.readlines():
 		line = line.replace('  ',' ')
 	final_list = line.strip().split()
 	sentence = ' '.join(final_list)
+	print(sentence)
 	line = str.encode(sentence)	
 	f.write(line)
 	i = i+1
