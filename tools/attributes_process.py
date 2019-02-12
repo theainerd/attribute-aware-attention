@@ -41,7 +41,6 @@ for line in f2.readlines():
 		line = line.replace('   ', ' ')
 		line = line.replace('  ', ' ')
 	strs = line.strip().split(' ')
-	print(strs)
 	if '1' in strs:
 		print("Trueeeee") 
 
