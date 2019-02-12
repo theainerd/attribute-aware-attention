@@ -8,4 +8,4 @@ f1 = open(attribute_name_file, 'rb')
 f = open("list_attr_cloth_new.txt",'wb')
 for line in f1.readlines():
 	print(line)
-	f.writelines(line)
+	f.write(line)
