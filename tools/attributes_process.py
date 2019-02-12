@@ -16,6 +16,7 @@ for line in f1.readlines():
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
 	strs = re.split('  ', line)
+	print(strs)
 	if(strs[0]!=last_attr):
 		start_idxs.append(int(strs[1]))
 	last_attr = strs[0]
