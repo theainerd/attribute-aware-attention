@@ -9,6 +9,8 @@ f = open("list_category_img_small.txt",'wb')
 i = 0
 for line in f1.readlines():
 	if i < 10000:
+		while line.replace('   ','  ') != line:
+			line = line.replace('   ', '  ')
 		f.write(line)
 		i = i+1
 	else:
