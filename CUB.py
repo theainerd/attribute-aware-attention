@@ -114,15 +114,15 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     A_train = A_all[train_idx]
     A_test = A_all[test_idx]
     # class attributes
-    C_A = np.zeros((50,1000))
-    class_attr_rf = open(class_attributes_file,'r')
-    i = 0
-    for line in class_attr_rf.readlines():
-        strs = line.strip().split(' ')
-        for j in range(len(strs)):
-            C_A[i][j] = 0 if strs[j]=='0.0' else float(1.0/float(strs[j]))
-        i+=1
-    class_attr_rf.close()
+    # C_A = np.zeros((50,1000))
+    # class_attr_rf = open(class_attributes_file,'r')
+    # i = 0
+    # for line in class_attr_rf.readlines():
+    #     strs = line.strip().split(' ')
+    #     for j in range(len(strs)):
+    #         C_A[i][j] = 0 if strs[j]=='0.0' else float(1.0/float(strs[j]))
+    #     i+=1
+    # class_attr_rf.close()
 
     X_train = np.array(X_train)
     X_test = np.array(X_test)
@@ -137,10 +137,24 @@ def load_data(data_folder, target_size=(224, 224), bounding_box=True):
     else:
         X_train = X_train.reshape(X_train.shape[0], target_size[0], target_size[1], 3)
         X_test = X_test.reshape(X_test.shape[0], target_size[0], target_size[1], 3)  
-    return (X_train,y_train), (X_test,y_test), (A_train,A_test,C_A)
+    return (X_train,y_train), (X_test,y_test), (A_train,A_test)
 
 
 # if __name__ == '__main__':
 #     (X_train,y_train), (X_test,y_test) = load_data()
 
 ######## Delete this part ########
+
+A_all = np.genfromtxt(processed_attribute_file, dtype=int, delimiter=' ')
+A_train = A_all[train_idx]
+A_test = A_all[test_idx]
+    # class attributes
+C_A = np.zeros((50,1000))
+class_attr_rf = open(class_attributes_file,'r')
+i = 0
+for line in class_attr_rf.readlines():
+    strs = line.strip().split(' ')
+    for j in range(len(strs)):
+        C_A[i][j] = 0 if strs[j]=='0.0' else float(1.0/float(strs[j]))
+    i+=1
+class_attr_rf.close()

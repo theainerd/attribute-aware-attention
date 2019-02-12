@@ -156,7 +156,7 @@ model.summary()
 #plot(model, show_shapes=True, to_file='./fig/'+net+'_attention.png')
 print("worked")
 # the data, shuffled and split between train and test sets
-(X_train, y_train),(X_test, y_test),(A_train,A_test,C_A)=eval(dataset).load_data(
+(X_train, y_train),(X_test, y_test),(A_train,A_test)=eval(dataset).load_data(
     data_folder, target_size=(img_rows, img_cols), bounding_box=True)
 
 print(X_train[100][1][50:60,100:110])
