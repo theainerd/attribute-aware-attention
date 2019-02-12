@@ -13,6 +13,8 @@ for line in f1.readlines():
 		line = line.replace('    ',' ')
 		line = line.replace('   ',' ')
 		line = line.replace('  ',' ')
+	line = line.lstrip()
+	line = line.rstrip()
 	print(line.strip().split(' '))
 	line = str.encode(line)	
 	f.write(line)
