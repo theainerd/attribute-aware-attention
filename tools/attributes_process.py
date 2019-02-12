@@ -39,6 +39,7 @@ for line in f2.readlines():
 	line = line.decode("utf-8")
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', ' ')
+		line = line.replace('  ', ' ')
 	print(line)
 
 # # transform binary attribute to clustered attribute
