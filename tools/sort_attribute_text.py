@@ -15,6 +15,6 @@ for line in f1.readlines():
 		line = line.replace('  ',' ')
 	line = line.strip()
 	print(line)
-	# line = str.encode(line)	
+	line = str.encode(line)	
 	f.write(line)
 	i = i+1
