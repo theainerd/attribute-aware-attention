@@ -9,7 +9,7 @@ f1 = open(attribute_name_file, 'rb')
 start_idxs = []
 last_attr = ''
 
-i = 0
+i,j,k,l,m = 0,0,0,0,0
 for line in f1.readlines():
 	line = line.decode("utf-8")
 	line = line.strip().replace('\n', '')
@@ -17,17 +17,17 @@ for line in f1.readlines():
 		line = line.replace('   ', '  ')
 	strs = re.split('  ', line)
 	if(strs[1]=='1'):
-		start_idxs.append(i)
+		i = i+1
 	if(strs[1]=='2'):
-		start_idxs.append(i)
+		j = j+1
 	if(strs[1]=='3'):
-		start_idxs.append(i)
+		k = k+1
 	if(strs[1]=='4'):
-		start_idxs.append(i)
+		l = l+1
 	if(strs[1]=='5'):
-		start_idxs.append(i)
-	i+= 1
+		m = m+1
 
+print(i,j,k,l,m)
 start_idxs.append(i+1)
 print(start_idxs)
 a = np.array(start_idxs)
