@@ -28,12 +28,8 @@ for line in f1.readlines():
 		m = m+1
 
 print(i,j,k,l,m)
-start_idxs.append(i+1)
-print(start_idxs)
-a = np.array(start_idxs)
-nums = a[1:]-a[:-1]+1
-print(np.sum(nums))
-print(nums.tolist())
+nums = [i,j,k,l,m]
+print(nums)
 
 # # transform binary attribute to clustered attribute
 # nb_attr = len(start_idxs)-1
