@@ -13,8 +13,8 @@ for line in f1.readlines():
 		line = line.replace('    ',' ')
 		line = line.replace('   ',' ')
 		line = line.replace('  ',' ')
-	line = line.strip()
-	print(line)
-	line = str.encode(line)	
+	final_list = line.strip().split()
+	sentence = ' '.join(final_list)
+	line = str.encode(sentence)	
 	f.write(line)
 	i = i+1
