@@ -43,7 +43,10 @@ for line in f2.readlines():
 	strs = line.strip().split(' ')
 	for i, j in enumerate(strs):
 		if j == '1':
-			print(i) 
+			print(i)
+			print("loop one")
+	print("loop two")		
+
 
 # # transform binary attribute to clustered attribute
 # nb_attr = len(nums)
