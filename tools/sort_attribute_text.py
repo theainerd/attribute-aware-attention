@@ -17,5 +17,5 @@ for line in f1.readlines():
 	sentence = ' '.join(final_list)
 	print(sentence)
 	line = str.encode(sentence)	
-	f.write(line)
+	f.write(sentence)
 	i = i+1
