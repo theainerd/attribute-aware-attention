@@ -9,8 +9,6 @@ f = open("list_attr_cloth.txt",'wb')
 i = 0
 for line in f1.readlines():
 	line = line.decode("utf-8")
-	while line.replace('   ','  ') != line:
-		line = line.replace('   ', '  ')
 	line = str.encode(line)
 	f.write(line)
 	i = i+1
