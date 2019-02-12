@@ -12,6 +12,6 @@ for line in f1.readlines():
 	while line.replace('   ','  ') != line:
 		line = line.replace('   ', '  ')
 		line = line.replace('   ', ' ')
-	line = line.encode("bytes")	
+	line = str.encode(line)	
 	f.write(line)
 	i = i+1
