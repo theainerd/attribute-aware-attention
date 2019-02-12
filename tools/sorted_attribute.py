@@ -4,3 +4,5 @@ data = pd.read_csv("list_attr_cloth_new.txt",sep = " ",error_bad_lines=False,hea
 data.columns = ["attr_subclass",'attr_class']
 print(data[:4])
 
+data.sort_values(by='attr_class', ascending=False)
+
